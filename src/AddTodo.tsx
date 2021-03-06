@@ -7,6 +7,13 @@ export const AddTodo : React.FC = () => {
     const [todo,setTodo] = useState("");
 
     const dispatch = useDispatch();
+
+    const addTodo = () =>{
+        dispatch({
+            type:"ADD_TODO",
+            payload:todo
+        })
+    }
     
     const changeTodo = (event: ChangeEvent<HTMLInputElement>) => {
         console.log(event.target.value)
