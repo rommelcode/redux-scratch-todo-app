@@ -16,11 +16,12 @@ export const AddTodo : React.FC = () => {
     }
     
     const changeTodo = (event: ChangeEvent<HTMLInputElement>) => {
-        console.log(event.target.value)
+    
         setTodo(event.target.value)
+        console.log(todo)
     }
 
     return <div>
-        <input onChange={changeTodo}></input>
+        <input onChange={changeTodo}></input><button onClick={addTodo}>Add todo</button>
     </div>
 }

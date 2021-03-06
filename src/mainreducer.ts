@@ -1,11 +1,10 @@
 
 
-interface todoState{
+export interface todoState{
     todos:string[]
 }
 
 const intialState ={todos:[]};
-
 
 function mainReducer(state:todoState = intialState,action:addTodoType){
     console.log("inside")
