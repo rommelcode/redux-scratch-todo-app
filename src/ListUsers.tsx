@@ -5,8 +5,6 @@ import { todoState, userState, } from "./mainreducer"
 
 const ListUsers: React.FC = () => {
 
-
-
   const users = useSelector<userState, userState["users"]>(
     (state) => state.users
   );

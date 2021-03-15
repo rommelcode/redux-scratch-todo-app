@@ -25,9 +25,9 @@ export function mainReducer(state: todoState = intialState, action: addTodoType)
 
 
 export function usersReducer(state: userState = intialStateUsers, action: usersType) {
-    console.log("inside")
+    console.log("inside get users")
     if (action.type == "GET_USERS") {
-        console.log("hello")
+        console.log("get users")
         return { ...state, users: [...state.users, action.payload] }
     }
 
@@ -46,8 +46,8 @@ type usersType = {
     payload: string
 }
 
-// export function callApi(dispatch) {
-//     fetch("https://jsonplaceholder.typicode.com/users")
-//         .then(response => response.json())
-//         .then(data => dispatch({ type: "GET_USERS", payload: data }));
-// }
+export function callApi(dispatch:any) {
+    fetch("https://jsonplaceholder.typicode.com/users")
+        .then(response => response.json())
+        .then(data => dispatch({ type: "GET_USERS", payload: data }));
+}

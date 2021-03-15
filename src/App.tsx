@@ -6,17 +6,18 @@ import {ListTodo} from './ListTodo'
 import ListUsers  from './ListUsers';
 
 import {useDispatch} from 'react-redux'
+import {callApi} from './mainreducer'
 
 function App() {
   const dispatch = useDispatch();
   
   
- // callApi(dispatch)
+ callApi(dispatch)
   return (
     <div className="App">
       <AddTodo></AddTodo>
       <ListTodo></ListTodo>
-      <ListUsers></ListUsers>
+      {/* <ListUsers></ListUsers> */}
     </div>
   );
 }
