@@ -16,7 +16,6 @@ export const AddTodo : React.FC = () => {
     }
     
     const changeTodo = (event: ChangeEvent<HTMLInputElement>) => {
-    
         setTodo(event.target.value)
         console.log(todo)
     }
