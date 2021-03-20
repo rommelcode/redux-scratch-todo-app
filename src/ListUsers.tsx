@@ -1,14 +1,20 @@
 import { useSelector, useDispatch } from "react-redux";
 import { toEditorSettings } from "typescript";
-import { todoState, userState, } from "./mainreducer"
-// import { callApi } from './mainreducer'
+import { todoState } from "./mainreducer"
+import { callApi } from './mainreducer'
 
 const ListUsers: React.FC = () => {
 
-  const users = useSelector<userState, userState["users"]>(
-    (state) => state.users
-  );
-  return <ul>{users.map(p => <li>{p}</li>)}</ul>
+  const dispatch = useDispatch();
+
+  callApi(dispatch);
+
+  // const users = useSelector<any, any>(
+  //   (state) => state
+  // );
+
+  return (<div>nothing</div>)
+  //return <ul>{users.map(p => <li>{p.name}</li>)}</ul>
 
 
 }

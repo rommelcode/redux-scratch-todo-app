@@ -9,15 +9,12 @@ import {useDispatch} from 'react-redux'
 import {callApi} from './mainreducer'
 
 function App() {
-  const dispatch = useDispatch();
-  
-  
- callApi(dispatch)
+ 
   return (
     <div className="App">
       <AddTodo></AddTodo>
-      <ListTodo></ListTodo>
-      {/* <ListUsers></ListUsers> */}
+  
+      <ListUsers></ListUsers>
     </div>
   );
 }

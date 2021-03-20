@@ -4,36 +4,32 @@ export interface todoState {
     todos: string[]
 }
 
-export interface userState {
-    users: string[]
+export interface postState {
+    posts: string[]
+}
+
+const initialPostState = { posts: [] };
+
+export function postsReducer(state: postState = initialPostState, action: addTodoType) {
+    console.log("inside")
+    if (action.type == "ADD_TODO") {
+        console.log("hello")
+        return { ...state, todos: [...state.posts, action.payload] }
+    }
+    return state;
 }
 
 
-const intialState = { todos: [] };
+const initialState = { todos: [] };
 
-const intialStateUsers = { users: [] };
-
-export function mainReducer(state: todoState = intialState, action: addTodoType) {
+export function mainReducer(state: todoState = initialState, action: addTodoType) {
     console.log("inside")
     if (action.type == "ADD_TODO") {
         console.log("hello")
         return { ...state, todos: [...state.todos, action.payload] }
     }
-
     return state;
 }
-
-
-export function usersReducer(state: userState = intialStateUsers, action: usersType) {
-    console.log("inside get users")
-    if (action.type == "GET_USERS") {
-        console.log("get users")
-        return { ...state, users: [...state.users, action.payload] }
-    }
-
-    return state;
-}
-
 
 
 type addTodoType = {
@@ -41,13 +37,22 @@ type addTodoType = {
     payload: string
 }
 
-type usersType = {
-    type: string,
-    payload: string
-}
 
 export function callApi(dispatch:any) {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    fetch("https://jsonplaceholder.typicode.com/posts")
         .then(response => response.json())
-        .then(data => dispatch({ type: "GET_USERS", payload: data }));
+        .then(data => dispatch({type:"SET_USERS",payload: data}));
 }
+
+
+// export interface post{
+//     userId:number;
+//     id: number;
+//     title: string;
+//     body: string;
+
+// }
+
+// export interface post{
+//  posts:string[]
+// }
