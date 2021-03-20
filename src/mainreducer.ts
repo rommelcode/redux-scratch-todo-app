@@ -4,8 +4,15 @@ export interface todoState {
     todos: string[]
 }
 
+export interface post{
+    userId:number;
+    id: number;
+    title: string;
+    body: string;
+}
+
 export interface postState {
-    posts: string[]
+    posts: post[]
 }
 
 const initialPostState = { posts: [] };
@@ -45,13 +52,6 @@ export function callApi(dispatch:any) {
 }
 
 
-// export interface post{
-//     userId:number;
-//     id: number;
-//     title: string;
-//     body: string;
-
-// }
 
 // export interface post{
 //  posts:string[]
