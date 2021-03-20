@@ -18,10 +18,10 @@ export interface postState {
 const initialPostState = { posts: [] };
 
 export function postsReducer(state: postState = initialPostState, action: addTodoType) {
-    console.log("inside")
-    if (action.type == "ADD_TODO") {
-        console.log("hello")
-        return { ...state, todos: [...state.posts, action.payload] }
+    console.log("inside SET_USERS reducer")
+    if (action.type == "SET_USERS") {
+        console.log("SET_USERS")
+        return { ...state, posts: [...state.posts, action.payload] }
     }
     return state;
 }
