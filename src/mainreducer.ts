@@ -4,23 +4,23 @@ export interface todoState {
     todos: string[]
 }
 
-export interface post{
-    userId:number;
-    id: number;
-    title: string;
-    body: string;
-}
+// export interface post{
+//     userId:number;
+//     id: number;
+//     title: string;
+//     body: string;
+// }
 
 export interface postState {
-    posts: post[]
+    posts: string[]
 }
 
 const initialPostState = { posts: [] };
 
 export function postsReducer(state: postState = initialPostState, action: addTodoType) {
-    console.log("inside SET_USERS reducer")
-    if (action.type == "SET_USERS") {
-        console.log("SET_USERS")
+    console.log("inside SET_POSTS reducer")
+    if (action.type == "SET_POSTS") {
+        console.log("SET_POSTS",action.payload)
         return { ...state, posts: [...state.posts, action.payload] }
     }
     return state;
@@ -30,7 +30,7 @@ export function postsReducer(state: postState = initialPostState, action: addTod
 const initialState = { todos: [] };
 
 export function mainReducer(state: todoState = initialState, action: addTodoType) {
-    console.log("inside")
+    //console.log("inside")
     if (action.type == "ADD_TODO") {
         console.log("hello")
         return { ...state, todos: [...state.todos, action.payload] }
@@ -48,7 +48,7 @@ type addTodoType = {
 export function callApi(dispatch:any) {
     fetch("https://jsonplaceholder.typicode.com/posts")
         .then(response => response.json())
-        .then(data => dispatch({type:"SET_USERS",payload: data}));
+        .then(data => dispatch({type:"SET_POSTS",payload: data}));
 }
 
 

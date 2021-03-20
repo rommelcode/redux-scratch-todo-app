@@ -9,12 +9,12 @@ const ListPosts: React.FC = () => {
 
   callApi(dispatch);
 
-  // const users = useSelector<any, any>(
-  //   (state) => state
-  // );
+  const posts = useSelector<any, any>(
+    (state) => state.posts
+  );
 
   return (<div>nothing posts</div>)
-  //return <ul>{users.map(p => <li>{p.name}</li>)}</ul>
+  //return <ul>{posts.map((p) => <li>{p.name}</li>)}</ul>
 
 
 }
