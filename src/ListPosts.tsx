@@ -1,13 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
 import { toEditorSettings } from "typescript";
-import { todoState } from "./mainreducer"
-import { callApi } from './mainreducer'
+
 
 const ListPosts: React.FC = () => {
 
   const dispatch = useDispatch();
-
-  callApi(dispatch);
 
   const posts = useSelector<any, any>(
     (state) => state.posts

@@ -10,7 +10,7 @@ export const AddTodo : React.FC = () => {
 
     const addTodo = () =>{
         dispatch({
-            type:"ADD_TODO",
+            type:"CHANGE_NUMBER",
             payload:todo
         })
     }

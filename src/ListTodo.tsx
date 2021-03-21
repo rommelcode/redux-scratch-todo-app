@@ -1,10 +1,11 @@
 import { useSelector } from "react-redux";
 import { toEditorSettings } from "typescript";
-import {todoState} from "./mainreducer"
+
 
 export function ListTodo(){
-    const todos = useSelector<todoState, todoState["todos"]>(
-        (state) => state.todos
+    const bla = useSelector<number, number>(
+        (state) => state
       );
-    return <ul>{todos.map(p => <li>{p}</li>)}</ul>
+
+ return (<div>{bla}</div>);
 }

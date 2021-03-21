@@ -6,7 +6,6 @@ import {ListTodo} from './ListTodo'
 import ListUsers  from './ListUsers';
 import ListPosts from './ListPosts'
 import {useDispatch} from 'react-redux'
-import {callApi} from './mainreducer'
 
 function App() {
  
@@ -14,7 +13,7 @@ function App() {
     <div className="App">
       <AddTodo></AddTodo>
   
-      <ListPosts></ListPosts>
+      <ListTodo></ListTodo>
     </div>
   );
 }
