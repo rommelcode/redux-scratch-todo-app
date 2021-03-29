@@ -6,12 +6,13 @@ import {ListTodo} from './ListTodo'
 import ListUsers  from './ListUsers';
 import ListPosts from './ListPosts'
 import {useDispatch} from 'react-redux'
+import {AddNumber} from './AddNumber'
 
 function App() {
  
   return (
     <div className="App">
-      <AddTodo></AddTodo>
+      <AddNumber></AddNumber>
   
       <ListTodo></ListTodo>
     </div>

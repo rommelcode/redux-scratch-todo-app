@@ -39,12 +39,23 @@ import {  useDispatch } from "react-redux";
 //     return state;
 // }
 
-const initialState = 12;
+// const initialState = 12;
 
-export const todosReducer:Reducer<number>= (state = initialState, action) =>
+// export const todosReducer:Reducer<number>= (state = initialState, action) =>
+// {
+//     //console.log("inside")
+//     if (action.type == "CHANGE_NUMBER") {
+//         console.log("inside reducer")
+//         return action.payload ;
+//     }
+//     return state;
+// }
+const initialState:number[] = [];
+
+export const todosReducer:Reducer<number[]>= (state = initialState, action) =>
 {
     //console.log("inside")
-    if (action.type == "CHANGE_NUMBER") {
+    if (action.type == "ADD_NUMBER") {
         console.log("inside reducer")
         return action.payload ;
     }
