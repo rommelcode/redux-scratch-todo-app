@@ -39,7 +39,7 @@ import {  useDispatch } from "react-redux";
 //     return state;
 // }
 
-const initialState = 0;
+const initialState = 12;
 
 export const todosReducer:Reducer<number>= (state = initialState, action) =>
 {
