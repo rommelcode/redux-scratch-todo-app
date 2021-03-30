@@ -57,7 +57,8 @@ export const todosReducer:Reducer<number[]>= (state = initialState, action) =>
     //console.log("inside")
     if (action.type == "ADD_NUMBER") {
         console.log("inside reducer")
-        return action.payload ;
+        return  [...state,action.payload]
+        
     }
     return state;
 }
