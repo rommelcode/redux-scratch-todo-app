@@ -50,12 +50,17 @@ import {  useDispatch } from "react-redux";
 //     }
 //     return state;
 // }
-const initialState:number[] = [];
 
-export const todosReducer:Reducer<number[]>= (state = initialState, action) =>
+export interface IPerson{
+    name:string,
+    age:number
+}
+const initialState:IPerson[] = [];
+
+export const todosReducer:Reducer<IPerson[]>= (state = initialState, action) =>
 {
-    //console.log("inside")
-    if (action.type == "ADD_NUMBER") {
+    console.log("inside reducer",action.payload)
+    if (action.type == "ADD_PERSON") {
         console.log("inside reducer")
         return  [...state,action.payload]
         
