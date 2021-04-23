@@ -9,5 +9,5 @@ export function ListNames() {
         (state) => state
     );
 
-    return (<div>{bla.map(n => <div>{n.name}</div>)}</div>);
+    return (<div>{bla.map(n => <div>{n.age}</div>)}</div>);
 }
