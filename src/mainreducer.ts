@@ -51,18 +51,29 @@ import {  useDispatch } from "react-redux";
 //     return state;
 // }
 
-export interface IPerson{
+export interface IUser{
     name:string,
-    age:number
+    userName:string
 }
-const initialState:IPerson[] = [];
+const initialState:IUser[] = [];
 
-export const todosReducer:Reducer<IPerson[]>= (state = initialState, action) =>
+// export const todosReducer:Reducer<IPerson[]>= (state = initialState, action) =>
+// {
+//     console.log("inside reducer",action.payload)
+//     if (action.type == "ADD_PERSON") {
+//         console.log("inside reducer")
+//         return  [...state,action.payload]
+        
+//     }
+//     return state;
+// }
+
+export const usersReducer:Reducer<IUser[]>= (state = initialState, action) =>
 {
     console.log("inside reducer",action.payload)
-    if (action.type == "ADD_PERSON") {
+    if (action.type == "SET_USERS") {
         console.log("inside reducer")
-        return  [...state,action.payload]
+        return  action.payload
         
     }
     return state;
@@ -75,11 +86,11 @@ export const todosReducer:Reducer<IPerson[]>= (state = initialState, action) =>
 // }
 
 
-// export function callApi(dispatch:any) {
-//     fetch("https://jsonplaceholder.typicode.com/posts")
-//         .then(response => response.json())
-//         .then(data => dispatch({type:"SET_POSTS",payload: data}));
-// }
+export function callApi(dispatch:any) {
+    fetch("https://jsonplaceholder.typicode.com/users")
+        .then(response => response.json())
+        .then(data => dispatch({type:"SET_USERS",payload: data}));
+}
 
 
 
